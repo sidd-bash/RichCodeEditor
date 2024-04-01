@@ -76,7 +76,7 @@ function App() {
           setRenderContent((prev) => new Map(prev.set(element[0], [parentId, element[1], newContent])));
         },
       },
-      childElements // Pass the array of child elements
+      childElements 
     );
   };
 
@@ -139,15 +139,13 @@ function App() {
     const range = selected.getRangeAt(0);
     // console.log(range.startOffset, range.endOffset)
     setIndex({ start: range.startOffset, end: range.endOffset })
-    const selectedText = range.toString();
+    // const selectedText = range.toString();
     // console.log(selectedText)
-    // Get the parent element of the selected text
     const parentElement = range.commonAncestorContainer.parentNode;
     console.log("Parent:-", parentElement)
     // if(parentElement.className==='textArea' && range.startOffset>range.endOffset){
     //   textFinder(selectedText,range.startOffset,range.endOffset)
     // }
-    // Check if the parent element has an ID and log it
     if (parentElement && parentElement.id) {
       setParentId(parentElement.id)
     }
